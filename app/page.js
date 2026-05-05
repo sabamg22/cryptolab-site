@@ -101,58 +101,40 @@ export default function Home() {
       </section>
 
       {/* SECTION 3 — PARTNERS */}
-      <section className="w-full bg-crypto-desert py-12 px-8 md:px-16 lg:px-32">
+      <section className="w-full bg-crypto-desert py-12 overflow-hidden">
         <h2 className="font-gothic text-4xl md:text-5xl font-bold text-center text-crypto-earth mb-12">
           Our Partners & Sponsors
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 place-items-center">
+        <div className="relative w-full overflow-hidden">
+          <div className="flex gap-16 animate-scroll whitespace-nowrap">
 
-          <div className="relative w-32 h-20">
-            <Image
-              src="/partner-logos/CMM.webp"
-              alt="CMM Logo"
-              fill
-              className="object-contain"
-            />
+            {[
+              "/partner-logos/africa-mycology.jpg",
+              "/partner-logos/edctp3.svg",
+              "/partner-logos/ukri-mrc.png",
+              "/partner-logos/ukaid.png",
+              "/partner-logos/ukri.png",
+              "/partner-logos/wellcome.png",
+            ].concat([
+              "/partner-logos/africa-mycology.jpg",
+              "/partner-logos/edctp3.svg",
+              "/partner-logos/ukri-mrc.png",
+              "/partner-logos/ukaid.png",
+              "/partner-logos/ukri.png",
+              "/partner-logos/wellcome.png",
+            ]).map((src, i) => (
+              <div key={i} className="relative w-40 h-24 flex-shrink-0">
+                <Image
+                  src={src}
+                  alt="Partner logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            ))}
+
           </div>
-
-          <div className="relative w-32 h-20">
-            <Image
-              src="/partner-logos/EDCT.webp"
-              alt="EDCTP Logo"
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          <div className="relative w-32 h-20">
-            <Image
-              src="/partner-logos/MRC.webp"
-              alt="MRC Centre for Medical Mycology Logo"
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          <div className="relative w-32 h-20">
-            <Image
-              src="/partner-logos/ukaid.webp"
-              alt="UK Aid Logo"
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          <div className="relative w-32 h-20">
-            <Image
-              src="/partner-logos/ukri.webp"
-              alt="UKRI Logo"
-              fill
-              className="object-contain"
-            />
-          </div>
-
         </div>
       </section>
 
