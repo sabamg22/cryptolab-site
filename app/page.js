@@ -81,7 +81,7 @@ export default function Home() {
             </p>
 
             <Link href="/research/">
-              <button className="bg-white text-crypto-earth px-8 py-3 rounded-md hover:bg-white/80 transition">
+              <button className="bg-white text-crypto-earth px-8 py-3 rounded-md hover:bg-crypto-gold hover:text-crypto-sand transition">
                 Our Research
               </button>
             </Link>

@@ -110,8 +110,8 @@ export default function NavBar() {
     scrolled: "/logos/logo-horizontal-dark.png",
   };
 
-  const maxSize = isMobile ? 100 : 200;
-  const minSize = isMobile ? 70 : 100;
+  const maxSize = isMobile ? 100 : 240;
+  const minSize = isMobile ? 70 : 120;
   const currentSize = maxSize - (maxSize - minSize) * shrink;
 
   const navItems = ["Home", "News", "Team", "Contact"];
