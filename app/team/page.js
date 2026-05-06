@@ -73,7 +73,7 @@ export default function Team() {
       role: "PhD Student",
       image: "/images/team/simran.webp",
       linkedin: "https://linkedin.com/",
-      bio: "PhD student.",
+      bio: "My interest in how dilated perivascular spaces drives downstream neurofluid complications guides much of my research. It has led me to explore aspects of fungal aggregation relative to the perivascular compartment, glymphatic function, and meningeal lymphatic drainage during murine models of cryptococcal meningitis. ",
     },
     {
       name: "Yanga Pato",
