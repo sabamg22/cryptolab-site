@@ -26,18 +26,18 @@ export default function News() {
       link: "https://nstf.org.za/2025/09/22/dr-rachael-dangarembizi/",
     },
     {
+      image: "/images/story4.webp",
+      date: "10 April 2026",
+      title: "Cape Town researchers lead R100 million initiative to fight deadly fungal infections",
+      text: "Researchers at the University of Cape Town are part of a major international effort backed by about R100 million to combat fungal infections that kill an estimated 2.5 million people worldwide each year...",
+      link: "https://iol.co.za/capeargus/news/2026-04-10-cape-town-researchers-lead-r100-million-initiative-to-fight-deadly-fungal-infections/",
+    },
+    {
       image: "/images/story3.webp",
       date: "14 April 2026",
       title: "UCT researchers join multi-million-pound fungal fight",
-      text: "Researchers at the University of Cape Town are playing a leading role in a significant international collaboration to fast-track the understanding of fungal diseases...",
+      text: "Researchers at the University of Cape Town are playing a leading role in a significant international collaboration to fast-track the understanding of fungal diseases that claim about 2.5 million lives each year. The funding of £4.5 million (approximately R100 million)...",
       link: "https://www.news.uct.ac.za/article/-2026-04-14-uct-researchers-join-multi-million-pound-fungal-fight",
-    },
-    {
-      image: "/images/story4.webp",
-      date: "10 April 2025",
-      title: "Cape Town researchers lead R100 million initiative to fight deadly fungal infections",
-      text: "Researchers at the University of Cape Town are part of a major international effort backed by about R100 million to combat fungal infections that kill an estimated 2.5 million people worldwide each year...",
-      link: "#",
     },
   ];
 
@@ -60,22 +60,43 @@ export default function News() {
       />
 
       {/* FEATURED STORIES */}
-      <section className="w-full bg-crypto-sand py-20 px-8 md:px-16 lg:px-32">
-        <h2 className="font-gothic text-crypto-earth text-4xl md:text-5xl font-bold mb-6">
-          Featured Stories
-        </h2>
+      <section className="w-full bg-crypto-desert py-20 px-8 md:px-16 lg:px-32">
+        
+        {/* TITLE + ARROWS */}
+        <div className="flex items-center justify-between mb-10">
+          <h2 className="font-gothic text-crypto-earth text-4xl md:text-5xl font-bold">
+            Featured Stories
+          </h2>
+
+          <div className="flex gap-4">
+            <button
+              onClick={prevSlide}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-crypto-sand shadow-md hover:bg-crypto-ochre hover:text-white transition-all duration-300 hover:scale-110"
+            >
+              <FaArrowLeft />
+            </button>
+
+            <button
+              onClick={nextSlide}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-crypto-sand shadow-md hover:bg-crypto-ochre hover:text-white transition-all duration-300 hover:scale-110"
+            >
+              <FaArrowRight />
+            </button>
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {visibleStories.map((story, index) => (
             <article
               key={`${story.title}-${index}`}
-              className="bg-crypto-sand rounded-lg p-4 shadow-md"
+            className="bg-crypto-sand rounded-lg p-4 shadow-md h-[520px] flex flex-col"
             >
-              <div className="relative h-56 w-full mb-4 rounded-md overflow-hidden">
+              <div className="relative w-full h-[180px] mb-4 rounded-md overflow-hidden flex-shrink-0">
                 <Image
                   src={story.image}
                   alt={story.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -101,27 +122,10 @@ export default function News() {
             </article>
           ))}
         </div>
-
-        {/* BIG CENTERED ARROWS */}
-        <div className="flex justify-center gap-10 mt-14">
-          <button
-            onClick={prevSlide}
-            className="w-12 h-12 flex items-center justify-center rounded-full bg-crypto-sand shadow-md hover:bg-crypto-ochre hover:text-white transition-all duration-300 hover:scale-110"
-          >
-            <FaArrowLeft className="text-2xl" />
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="w-12 h-12 flex items-center justify-center rounded-full bg-crypto-sand shadow-md hover:bg-crypto-ochre hover:text-white transition-all duration-300 hover:scale-110"
-          >
-            <FaArrowRight className="text-2xl" />
-          </button>
-        </div>
       </section>
 
       {/* UPDATES */}
-      <div className="w-full bg-crypto-desert py-20 px-8 md:px-16 lg:px-32">
+      <div className="w-full bg-crypto-sand py-20 px-8 md:px-16 lg:px-32">
         <h2 className="font-gothic text-4xl md:text-5xl font-bold mb-6">
           Lab News & Updates
         </h2>
@@ -141,21 +145,8 @@ export default function News() {
               link: "#",
             },
           ].map((item, index) => (
-            <li
-              key={index}
-              className="group relative border-l-4 border-crypto-red pl-4 pr-8 hover:border-crypto-ochre cursor-pointer"
-              onMouseMove={(e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                const emoji = e.currentTarget.querySelector(".emoji");
-                if (emoji) {
-                  emoji.style.left = `${e.clientX - rect.left}px`;
-                  emoji.style.top = `${e.clientY - rect.top}px`;
-                }
-              }}
-            >
-              <span className="emoji pointer-events-none absolute opacity-0 text-2xl transition group-hover:opacity-100 -translate-x-1/2 -translate-y-full">
-                🥳
-              </span>
+            <li key={index}
+              className="group relative border-l-4 border-crypto-red pl-4 pr-8 hover:border-crypto-ochre cursor-pointer">
 
               <a href={item.link}>
                 <p className="text-2xl group-hover:text-crypto-ochre">
