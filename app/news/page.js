@@ -137,14 +137,6 @@ export default function News() {
               text: "Congratulations to our PI on being promoted to Associate Professor!",
               link: "#",
             },
-            {
-              text: "Upcoming: Manuscript on lesion hypoxia under review.",
-              link: "#",
-            },
-            {
-              text: "New imaging pipeline released.",
-              link: "#",
-            },
           ].map((item, index) => (
             <li
               key={index}
