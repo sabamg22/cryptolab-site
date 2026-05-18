@@ -88,7 +88,7 @@ export default function Research() {
         </div>
       </Hero>
 
-      <main className="w-full bg-white px-4 sm:px-6 md:px-12 py-16 md:py-20">
+      <main className="w-full bg-crypto-sand px-4 sm:px-6 md:px-12 py-16 md:py-20">
         <section className="max-w-5xl mx-auto">
           <div className="space-y-16">
             {researchAreas.map((area) => (
