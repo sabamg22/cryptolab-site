@@ -11,7 +11,7 @@ export default function Publications() {
         title:
           "The emergence of neuroinvasive Cryptococcus: why eucalyptus-rich regions, especially in Africa, may be facing greater risk",
         journal: "Frontiers in Cellular and Infection Microbiology",
-        details: "2026;15:1727496. doi: 10.3389/fcimb.2025.1727496.",
+        details: "15:1727496. doi: 10.3389/fcimb.2025.1727496.",
         linkto: "https://www.frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2025.1727496/full",
       },
     ],
@@ -25,7 +25,7 @@ export default function Publications() {
         title:
           "Neuroinflammation in fungal infections: from pathogen recognition to pathological manifestations",
         journal: "Disease Models & Mechanisms",
-        details: "2025;18(9):dmm052344. doi: 10.1242/dmm.052344.",
+        details: "18(9) doi: 10.1242/dmm.052344.",
         linkto: "https://journals.biologists.com/dmm/article/18/9/dmm052344/369429/Neuroinflammation-in-fungal-infections-from",
       },
       {
@@ -34,7 +34,7 @@ export default function Publications() {
         title:
           "Neurological sequelae after paediatric cryptococcal meningitis",
         journal: "Journal of Fungi",
-        details: "2025;11(11):767. doi: 10.3390/jof11110767.",
+        details: "11(11):767 doi: 10.3390/jof11110767.",
         linkto: "https://www.mdpi.com/2309-608X/11/11/767",
       },
       {
@@ -43,7 +43,7 @@ export default function Publications() {
         title:
           "AIDS-related mycoses: advances, challenges, and future directions",
         journal: "Trends in Microbiology",
-        details: "2025;33(2):141-144. doi: 10.1016/j.tim.2024.12.004.",
+        details: "33(2):141-144. doi: 10.1016/j.tim.2024.12.004.",
         linkto: "https://www.cell.com/trends/microbiology/abstract/S0966-842X(24)00319-6",
       },
     ],
@@ -57,7 +57,7 @@ export default function Publications() {
         title:
           "Immune-related neurodegeneration in the midbrain causes pulmonary dysfunction in murine cryptococcal IRIS",
         journal: "Trends in Neurosciences",
-        details: "2023. doi: 10.1016/j.tins.2023.09.005.",
+        details: "doi: 10.1016/j.tins.2023.09.005.",
         linkto: "https://www.sciencedirect.com/science/article/abs/pii/S0166223623002230",
       },
       {
@@ -66,7 +66,7 @@ export default function Publications() {
         title:
           "Emerging and re-emerging fungal threats in Africa",
         journal: "Parasite Immunology",
-        details: "2023;45(2):e12953. doi: 10.1111/pim.12953.",
+        details: "45(2) doi: 10.1111/pim.12953.",
         linkto: "https://onlinelibrary.wiley.com/doi/10.1111/pim.12953",
       },
     ],
@@ -80,7 +80,7 @@ export default function Publications() {
         title:
           "Reimagining the future of African brain health: perspectives for basic research on the pathogenesis of cryptococcal meningitis",
         journal: "Brain, Behavior, & Immunity - Health",
-        details: "2021;18:100388. doi: 10.1016/j.bbih.2021.100388.",
+        details: "18:100388. doi: 10.1016/j.bbih.2021.100388.",
         linkto: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605210/",
       },
     ],

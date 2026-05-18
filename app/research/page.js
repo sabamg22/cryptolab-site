@@ -8,44 +8,46 @@ import ResearchHeroWrapper from "../../components/hero-wrap";
 export default function Research() {
   useEffect(() => {
     document.body.classList.add("hero-dark");
-    return () => document.body.classList.remove("hero-dark");
+
+    return () => {
+      document.body.classList.remove("hero-dark");
+    };
   }, []);
 
   const researchAreas = [
     {
       title: "Antifungal Neuroimmunity",
-      description1:
-        "Placeholder description for Antifungal Neuroimmunity. Edit this text to describe how the lab investigates immune responses to fungal infection in the brain.",
-      description2:
-        "Additional placeholder text for this research area. This can include key models, cell types, pathways, or major questions.",
+      image: "/images/antifungal-neuroimmunity.webp",
+      description:
+        "Placeholder description for Antifungal Neuroimmunity.",
     },
+
     {
       title: "Neurofluid Dynamics",
-      description1:
-        "Placeholder description for Neurofluid Dynamics. Edit this text to describe how infection affects brain fluid movement, clearance pathways, and CNS barriers.",
-      description2:
-        "Additional placeholder text for this research area. This can include glymphatic flow, CSF dynamics, vascular interfaces, or meningeal pathways.",
+      video: "/videos/neurofluid-dynamics.mp4",
+      description:
+        "Our work investigates how cryptococcal meningitis disrupts fluid transport and clearance pathways in the brain. Our lab has established an intracisternal cannulation model to measure glymphatic function during murine cryptococcal meningitis and provided the first experimental evidence of glymphatic disruption in this disease model. Current projects include 3D segmentation of perivascular spaces across the murine brain and optimization of tissue clearing and fluorescent immunolabelling protocols for both murine and human samples.",
     },
+
     {
       title: "Neurometabolism",
-      description1:
-        "Placeholder description for Neurometabolism. Edit this text to describe how fungal infection reshapes oxygen availability, hypoxia, and metabolic stress in brain tissue.",
-      description2:
-        "Additional placeholder text for this research area. This can include cryptococcal lesions, metabolic adaptation, host-cell stress, or fungal persistence.",
+      image: "/images/neurometabolism.webp",
+      description:
+        "Placeholder description for Neurometabolism.",
     },
+
     {
       title: "Neural Circuits & Behaviour",
-      description1:
-        "Placeholder description for Neural Circuits & Behaviour. Edit this text to describe how infection-related brain changes may affect neural circuits and behaviour.",
-      description2:
-        "Additional placeholder text for this research area. This can include cognitive outcomes, behavioural assays, brain-region vulnerability, or circuit disruption.",
+      image: "/images/neural-circuits-behaviour.webp",
+      description:
+        "Placeholder description for Neural Circuits & Behaviour.",
     },
+
     {
       title: "Clinical Translation and Biomarker Discovery",
-      description1:
-        "Placeholder description for Clinical Translation and Biomarker Discovery. Edit this text to describe how lab findings may inform diagnosis, prognosis, or treatment strategies.",
-      description2:
-        "Additional placeholder text for this research area. This can include biomarkers, patient relevance, therapeutic targets, or translational pipelines.",
+      image: "/images/clinical-translation-biomarkers.webp",
+      description:
+        "Placeholder description for Clinical Translation and Biomarker Discovery.",
     },
   ];
 
@@ -75,42 +77,56 @@ export default function Research() {
             </p>
 
             <a
-                href='/publications'
-                rel="noopener noreferrer"
-                className="underline text-crypto-sand hover:text-crypto-ochre transition"
-              >
-                <br></br>Publications →
-              </a>
-
+              href="/publications"
+              rel="noopener noreferrer"
+              className="underline text-crypto-sand hover:text-crypto-ochre transition"
+            >
+              <br />
+              Publications →
+            </a>
           </ResearchHeroWrapper>
         </div>
       </Hero>
 
       <main className="w-full bg-white px-4 sm:px-6 md:px-12 py-16 md:py-20">
         <section className="max-w-5xl mx-auto">
-          <div className="space-y-14">
+          <div className="space-y-16">
             {researchAreas.map((area) => (
               <div key={area.title}>
-                <div className="relative w-full h-48 sm:h-56 md:h-64 overflow-hidden">
-                  <Image
-                    src="/images/placeholder.webp"
-                    alt={area.title}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative w-full h-56 sm:h-64 md:h-72 overflow-hidden rounded-2xl">
 
-                  <div className="absolute inset-0 bg-black/35" />
+                  {area.video ? (
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover"
+                    >
+                      <source src={area.video} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <Image
+                      src={area.image}
+                      alt={area.title}
+                      fill
+                      className="object-cover"
+                    />
+                  )}
+
+                  <div className="absolute inset-0 bg-black/40" />
 
                   <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
-                    <h3 className="font-gothic text-white text-2xl sm:text-3xl md:text-4xl font-bold drop-shadow-md">
+                    <h3 className="font-gothic text-white text-2xl sm:text-3xl md:text-4xl font-bold drop-shadow-lg">
                       {area.title}
                     </h3>
                   </div>
                 </div>
 
-                <div className="mt-8 space-y-5 font-futura text-gray-700 text-base md:text-lg leading-relaxed">
-                  <p>{area.description1}</p>
-                  <p>{area.description2}</p>
+                <div className="mt-8">
+                  <p className="font-futura text-gray-700 text-base md:text-lg leading-relaxed">
+                    {area.description}
+                  </p>
                 </div>
               </div>
             ))}
