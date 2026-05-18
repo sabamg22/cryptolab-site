@@ -2,90 +2,158 @@ import Hero from "../../components/hero";
 
 export default function Publications() {
   const publicationsByYear = [
-  {
-    year: "2026",
-    papers: [
-      {
-        authors:
-          "Irere H, Dangarembizi R, Mukaremera L, Dambuza IM",
-        title:
-          "The emergence of neuroinvasive Cryptococcus: why eucalyptus-rich regions, especially in Africa, may be facing greater risk",
-        journal: "Frontiers in Cellular and Infection Microbiology",
-        details: "15:1727496. doi: 10.3389/fcimb.2025.1727496.",
-        linkto: "https://www.frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2025.1727496/full",
-      },
-    ],
-  },
-  {
-    year: "2025",
-    papers: [
-      {
-        authors:
-          "Dangarembizi R, Awala AN, de Lange A",
-        title:
-          "Neuroinflammation in fungal infections: from pathogen recognition to pathological manifestations",
-        journal: "Disease Models & Mechanisms",
-        details: "18(9) doi: 10.1242/dmm.052344.",
-        linkto: "https://journals.biologists.com/dmm/article/18/9/dmm052344/369429/Neuroinflammation-in-fungal-infections-from",
-      },
-      {
-        authors:
-          "Gifford A, Patel SA, Matlakala M, Dangarembizi R, Warris A",
-        title:
-          "Neurological sequelae after paediatric cryptococcal meningitis",
-        journal: "Journal of Fungi",
-        details: "11(11):767 doi: 10.3390/jof11110767.",
-        linkto: "https://www.mdpi.com/2309-608X/11/11/767",
-      },
-      {
-        authors:
-          "Dangarembizi R, Hoving JC, Boulware DR, Colombo AL, Govender NP, Oladele R, Dat VQ, Schwartz IS, Brown GD",
-        title:
-          "AIDS-related mycoses: advances, challenges, and future directions",
-        journal: "Trends in Microbiology",
-        details: "33(2):141-144. doi: 10.1016/j.tim.2024.12.004.",
-        linkto: "https://www.cell.com/trends/microbiology/abstract/S0966-842X(24)00319-6",
-      },
-    ],
-  },
-  {
-    year: "2023",
-    papers: [
-      {
-        authors:
-          "Dangarembizi R, Drummond RA",
-        title:
-          "Immune-related neurodegeneration in the midbrain causes pulmonary dysfunction in murine cryptococcal IRIS",
-        journal: "Trends in Neurosciences",
-        details: "doi: 10.1016/j.tins.2023.09.005.",
-        linkto: "https://www.sciencedirect.com/science/article/abs/pii/S0166223623002230",
-      },
-      {
-        authors:
-          "Dangarembizi R, Wasserman S, Hoving JC",
-        title:
-          "Emerging and re-emerging fungal threats in Africa",
-        journal: "Parasite Immunology",
-        details: "45(2) doi: 10.1111/pim.12953.",
-        linkto: "https://onlinelibrary.wiley.com/doi/10.1111/pim.12953",
-      },
-    ],
-  },
-  {
-    year: "2021",
-    papers: [
-      {
-        authors:
-          "Dangarembizi R",
-        title:
-          "Reimagining the future of African brain health: perspectives for basic research on the pathogenesis of cryptococcal meningitis",
-        journal: "Brain, Behavior, & Immunity - Health",
-        details: "18:100388. doi: 10.1016/j.bbih.2021.100388.",
-        linkto: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605210/",
-      },
-    ],
-  },
-];
+    {
+      year: "2026",
+      papers: [
+        {
+          authors:
+            "Irere H, Dangarembizi R, Mukaremera L, Dambuza IM",
+          title:
+            "The emergence of neuroinvasive Cryptococcus: why eucalyptus-rich regions, especially in Africa, may be facing greater risk",
+          journal: "Frontiers in Cellular and Infection Microbiology",
+          details: "2026;15:1727496.",
+          doi: "https://doi.org/10.3389/fcimb.2025.1727496",
+          linkto:
+            "https://www.frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2025.1727496/full",
+        },
+      ],
+    },
+
+    {
+      year: "2025",
+      papers: [
+        {
+          authors:
+            "Dangarembizi R, Awala AN, de Lange A",
+          title:
+            "Neuroinflammation in fungal infections: from pathogen recognition to pathological manifestations",
+          journal: "Disease Models & Mechanisms",
+          details: "2025;18(9):dmm052344.",
+          doi: "https://doi.org/10.1242/dmm.052344",
+          linkto:
+            "https://journals.biologists.com/dmm/article/18/9/dmm052344/369429/Neuroinflammation-in-fungal-infections-from",
+        },
+
+        {
+          authors:
+            "Gifford A, Patel SA, Matlakala M, Dangarembizi R, Warris A",
+          title:
+            "Neurological sequelae after paediatric cryptococcal meningitis",
+          journal: "Journal of Fungi",
+          details: "2025;11(11):767.",
+          doi: "https://doi.org/10.3390/jof11110767",
+          linkto:
+            "https://www.mdpi.com/2309-608X/11/11/767",
+        },
+
+        {
+          authors:
+            "Dangarembizi R, Hoving JC, Boulware DR, Colombo AL, Govender NP, Oladele R, Dat VQ, Schwartz IS, Brown GD",
+          title:
+            "AIDS-related mycoses: advances, challenges, and future directions",
+          journal: "Trends in Microbiology",
+          details: "2025;33(2):141-144.",
+          doi: "https://doi.org/10.1016/j.tim.2024.12.004",
+          linkto:
+            "https://www.cell.com/trends/microbiology/abstract/S0966-842X(24)00319-6",
+        },
+
+        {
+          authors:
+            "Awala AN, Higgitt ER, de Lange A, Kauchali M, Pato Y, Raimondo JV, Dangarembizi R",
+          title:
+            "Silent sentinels: microglial (in)action during cryptococcal infection",
+          journal: "SONA Neuroimmunology Symposium Abstracts",
+          details: "2025.",
+          doi: "",
+          linkto:
+            "https://sona2025.uca.ma/abstract_sympo/SP5_2.pdf",
+        },
+
+        {
+          authors:
+            "Awala AN, et al.",
+          title:
+            "Decrypting the complex neuroimmune interactions underlying brain injury during cryptococcal infection",
+          journal: "Neuroscience",
+          details: "2025;580:28.",
+          doi: "",
+          linkto:
+            "https://www.researchgate.net/publication/394374841_Decrypting_the_complex_neuroimmune_interactions_underlying_brain_injury_during_cryptococcal_infection",
+        },
+      ],
+    },
+
+    {
+      year: "2023",
+      papers: [
+        {
+          authors:
+            "Dangarembizi R, Drummond RA",
+          title:
+            "Immune-related neurodegeneration in the midbrain causes pulmonary dysfunction in murine cryptococcal IRIS",
+          journal: "Trends in Neurosciences",
+          details: "2023.",
+          doi: "https://doi.org/10.1016/j.tins.2023.09.005",
+          linkto:
+            "https://www.sciencedirect.com/science/article/abs/pii/S0166223623002230",
+        },
+
+        {
+          authors:
+            "Dangarembizi R, Wasserman S, Hoving JC",
+          title:
+            "Emerging and re-emerging fungal threats in Africa",
+          journal: "Parasite Immunology",
+          details: "2023;45(2):e12953.",
+          doi: "https://doi.org/10.1111/pim.12953",
+          linkto:
+            "https://onlinelibrary.wiley.com/doi/10.1111/pim.12953",
+        },
+
+        {
+          authors:
+            "Awala AN, Kauchali M, de Lange A, Higgitt ER, Mbangiwa T, Raimondo JV, Dangarembizi R",
+          title:
+            "Mouse organotypic brain slice cultures: a novel model for studying neuroimmune responses to cryptococcal brain infections",
+          journal: "Methods in Molecular Biology",
+          details: "2023;2667:31-45.",
+          doi: "https://doi.org/10.1007/978-1-0716-3199-7_4",
+          linkto:
+            "https://pubmed.ncbi.nlm.nih.gov/37145274/",
+        },
+
+        {
+          authors:
+            "Dangarembizi R, de Lange A, Higgitt E, Awala AN, et al.",
+          title:
+            "Human brain organotypic slice cultures: a novel model for studying the neuroimmune mechanisms underlying brain injury in cryptococcal meningitis",
+          journal: "IBRO Neuroscience Reports",
+          details: "2023.",
+          doi: "",
+          linkto:
+            "https://www.ibroneuroreports.org/article/S2667-2421(23)00537-7/fulltext",
+        },
+      ],
+    },
+
+    {
+      year: "2021",
+      papers: [
+        {
+          authors:
+            "Dangarembizi R",
+          title:
+            "Reimagining the future of African brain health: perspectives for basic research on the pathogenesis of cryptococcal meningitis",
+          journal: "Brain, Behavior, & Immunity - Health",
+          details: "2021;18:100388.",
+          doi: "https://doi.org/10.1016/j.bbih.2021.100388",
+          linkto:
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605210/",
+        },
+      ],
+    },
+  ];
 
   return (
     <>
@@ -120,18 +188,34 @@ export default function Publications() {
                     >
                       <p className="font-futura text-lg text-crypto-coal leading-relaxed">
                         {paper.authors}, {group.year},{" "}
-                        <em className="text-crypto-earth">{paper.title}</em>.{" "}
+                        <em className="text-crypto-earth">
+                          {paper.title}
+                        </em>
+                        .{" "}
                         <strong className="font-bold text-crypto-earth">
                           {paper.journal}
                         </strong>{" "}
                         {paper.details}{" "}
-                        <br></br>
-                        <br></br>
+
+                        {paper.doi && (
+                          <a
+                            href={paper.doi}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 underline hover:text-blue-800 transition"
+                          >
+                            doi
+                          </a>
+                        )}
+
+                        <br />
+                        <br />
+
                         <a
                           href={paper.linkto}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-crypto-gold underline hover:text-crypto-ochre transitions"
+                          className="text-crypto-gold underline hover:text-crypto-ochre transition"
                         >
                           Read →
                         </a>

@@ -1,233 +1,164 @@
+"use client";
+
 import Hero from "../../components/hero";
+import Image from "next/image";
+import { useState } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-export default function Publications() {
-  const publicationsByYear = [
+export default function News() {
+  const [startIndex, setStartIndex] = useState(0);
+
+  const stories = [
     {
-      year: "2026",
-      papers: [
-        {
-          authors:
-            "Irere H, Dangarembizi R, Mukaremera L, Dambuza IM",
-          title:
-            "The emergence of neuroinvasive Cryptococcus: why eucalyptus-rich regions, especially in Africa, may be facing greater risk",
-          journal: "Frontiers in Cellular and Infection Microbiology",
-          details: "2026;15:1727496.",
-          doi: "https://doi.org/10.3389/fcimb.2025.1727496",
-          linkto:
-            "https://www.frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2025.1727496/full",
-        },
-      ],
+      image: "/images/story3.webp",
+      date: "14 April 2026",
+      title: "UCT researchers join multi-million-pound fungal fight",
+      text: "Researchers at the University of Cape Town are playing a leading role in a significant international collaboration to fast-track the understanding of fungal diseases that claim about 2.5 million lives each year. The funding of £4.5 million (approximately R100 million)...",
+      link: "https://www.news.uct.ac.za/article/-2026-04-14-uct-researchers-join-multi-million-pound-fungal-fight",
     },
-
     {
-      year: "2025",
-      papers: [
-        {
-          authors:
-            "Dangarembizi R, Awala AN, de Lange A",
-          title:
-            "Neuroinflammation in fungal infections: from pathogen recognition to pathological manifestations",
-          journal: "Disease Models & Mechanisms",
-          details: "2025;18(9):dmm052344.",
-          doi: "https://doi.org/10.1242/dmm.052344",
-          linkto:
-            "https://journals.biologists.com/dmm/article/18/9/dmm052344/369429/Neuroinflammation-in-fungal-infections-from",
-        },
-
-        {
-          authors:
-            "Gifford A, Patel SA, Matlakala M, Dangarembizi R, Warris A",
-          title:
-            "Neurological sequelae after paediatric cryptococcal meningitis",
-          journal: "Journal of Fungi",
-          details: "2025;11(11):767.",
-          doi: "https://doi.org/10.3390/jof11110767",
-          linkto:
-            "https://www.mdpi.com/2309-608X/11/11/767",
-        },
-
-        {
-          authors:
-            "Dangarembizi R, Hoving JC, Boulware DR, Colombo AL, Govender NP, Oladele R, Dat VQ, Schwartz IS, Brown GD",
-          title:
-            "AIDS-related mycoses: advances, challenges, and future directions",
-          journal: "Trends in Microbiology",
-          details: "2025;33(2):141-144.",
-          doi: "https://doi.org/10.1016/j.tim.2024.12.004",
-          linkto:
-            "https://www.cell.com/trends/microbiology/abstract/S0966-842X(24)00319-6",
-        },
-
-        {
-          authors:
-            "Awala AN, Higgitt ER, de Lange A, Kauchali M, Pato Y, Raimondo JV, Dangarembizi R",
-          title:
-            "Silent sentinels: microglial (in)action during cryptococcal infection",
-          journal: "SONA Neuroimmunology Symposium Abstracts",
-          details: "2025.",
-          doi: "",
-          linkto:
-            "https://sona2025.uca.ma/abstract_sympo/SP5_2.pdf",
-        },
-
-        {
-          authors:
-            "Awala AN, et al.",
-          title:
-            "Decrypting the complex neuroimmune interactions underlying brain injury during cryptococcal infection",
-          journal: "Neuroscience",
-          details: "2025;580:28.",
-          doi: "",
-          linkto:
-            "https://www.researchgate.net/publication/394374841_Decrypting_the_complex_neuroimmune_interactions_underlying_brain_injury_during_cryptococcal_infection",
-        },
-      ],
+      image: "/images/story4.webp",
+      date: "10 April 2026",
+      title:
+        "Cape Town researchers lead R100 million initiative to fight deadly fungal infections",
+      text: "Researchers at the University of Cape Town are part of a major international effort backed by about R100 million to combat fungal infections that kill an estimated 2.5 million people worldwide each year...",
+      link: "https://iol.co.za/capeargus/news/2026-04-10-cape-town-researchers-lead-r100-million-initiative-to-fight-deadly-fungal-infections/",
     },
-
     {
-      year: "2023",
-      papers: [
-        {
-          authors:
-            "Dangarembizi R, Drummond RA",
-          title:
-            "Immune-related neurodegeneration in the midbrain causes pulmonary dysfunction in murine cryptococcal IRIS",
-          journal: "Trends in Neurosciences",
-          details: "2023.",
-          doi: "https://doi.org/10.1016/j.tins.2023.09.005",
-          linkto:
-            "https://www.sciencedirect.com/science/article/abs/pii/S0166223623002230",
-        },
-
-        {
-          authors:
-            "Dangarembizi R, Wasserman S, Hoving JC",
-          title:
-            "Emerging and re-emerging fungal threats in Africa",
-          journal: "Parasite Immunology",
-          details: "2023;45(2):e12953.",
-          doi: "https://doi.org/10.1111/pim.12953",
-          linkto:
-            "https://onlinelibrary.wiley.com/doi/10.1111/pim.12953",
-        },
-
-        {
-          authors:
-            "Awala AN, Kauchali M, de Lange A, Higgitt ER, Mbangiwa T, Raimondo JV, Dangarembizi R",
-          title:
-            "Mouse organotypic brain slice cultures: a novel model for studying neuroimmune responses to cryptococcal brain infections",
-          journal: "Methods in Molecular Biology",
-          details: "2023;2667:31-45.",
-          doi: "https://doi.org/10.1007/978-1-0716-3199-7_4",
-          linkto:
-            "https://pubmed.ncbi.nlm.nih.gov/37145274/",
-        },
-
-        {
-          authors:
-            "Dangarembizi R, de Lange A, Higgitt E, Awala AN, et al.",
-          title:
-            "Human brain organotypic slice cultures: a novel model for studying the neuroimmune mechanisms underlying brain injury in cryptococcal meningitis",
-          journal: "IBRO Neuroscience Reports",
-          details: "2023.",
-          doi: "",
-          linkto:
-            "https://www.ibroneuroreports.org/article/S2667-2421(23)00537-7/fulltext",
-        },
-      ],
+      image: "/images/story2.webp",
+      date: "22 September 2025",
+      title:
+        "For advancing neuroinfectious disease research, and her groundbreaking work on cryptococcal meningitis",
+      text: "A deadly fungal infection is claiming more lives in sub-Saharan Africa than tuberculosis among people living with HIV, yet few outside the continent even know its name...",
+      link: "https://nstf.org.za/2025/09/22/dr-rachael-dangarembizi/",
     },
-
     {
-      year: "2021",
-      papers: [
-        {
-          authors:
-            "Dangarembizi R",
-          title:
-            "Reimagining the future of African brain health: perspectives for basic research on the pathogenesis of cryptococcal meningitis",
-          journal: "Brain, Behavior, & Immunity - Health",
-          details: "2021;18:100388.",
-          doi: "https://doi.org/10.1016/j.bbih.2021.100388",
-          linkto:
-            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605210/",
-        },
-      ],
+      image: "/images/story1.webp",
+      date: "14 July 2023",
+      title:
+        "Fungal infections in the brain aren’t just the stuff of movies – Africa grapples with a deadly epidemic",
+      text: "In the 2023 American post-apocalyptic drama television series The Last of Us, humans are plunged towards extinction as a fungal infection of the brain zombie-fies most of the species...",
+      link: "https://www.gavi.org/vaccineswork/fungal-infections-brain-arent-just-stuff-movies-africa-grapples-deadly-epidemic",
     },
   ];
+
+  const visibleStories = [0, 1, 2].map(
+    (offset) => stories[(startIndex + offset) % stories.length]
+  );
+
+  const nextSlide = () => {
+    setStartIndex((prev) => (prev + 1) % stories.length);
+  };
+
+  const prevSlide = () => {
+    setStartIndex((prev) => (prev - 1 + stories.length) % stories.length);
+  };
 
   return (
     <>
       <Hero
-        image="/images/hero-publications.webp"
-        title="Publications"
-        subtitle="Selected research outputs from the Crypto Lab"
+        image="/images/hero-news.webp"
+        title="Lab News"
+        subtitle="Updates, publications, and achievements"
       />
 
-      <main className="w-full bg-crypto-sand py-20 px-6 md:px-16 lg:px-32">
-        <div className="max-w-5xl mx-auto">
-          <p className="font-futura text-crypto-ochre uppercase text-sm tracking-widest mb-3">
-            Research Outputs
-          </p>
+      <section className="w-full bg-crypto-desert py-20 px-8 md:px-16 lg:px-32">
+        <div className="mb-10">
+          <h2 className="font-gothic text-crypto-earth text-4xl md:text-5xl font-bold">
+            Featured Stories
+          </h2>
+        </div>
 
-          <h1 className="font-gothic text-4xl md:text-6xl text-crypto-earth mb-6">
-            Publications
-          </h1>
+        <div className="relative">
+          <button
+            onClick={prevSlide}
+            aria-label="Previous story"
+            className="absolute left-[-60px] md:left-[-80px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-crypto-sand shadow-xl hover:bg-crypto-ochre hover:text-white transition-all duration-300 hover:scale-110"
+          >
+            <FaArrowLeft />
+          </button>
 
-          <div className="space-y-14">
-            {publicationsByYear.map((group) => (
-              <section key={group.year}>
-                <h2 className="font-gothic text-3xl md:text-4xl text-crypto-earth font-bold mb-8">
-                  {group.year}
-                </h2>
+          <button
+            onClick={nextSlide}
+            aria-label="Next story"
+            className="absolute right-[-60px] md:right-[-80px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-crypto-sand shadow-xl hover:bg-crypto-ochre hover:text-white transition-all duration-300 hover:scale-110"
+          >
+            <FaArrowRight />
+          </button>
 
-                <div className="space-y-8">
-                  {group.papers.map((paper, index) => (
-                    <article
-                      key={index}
-                      className="border-l-4 border-crypto-ochre pl-5 pb-4 border-b border-crypto-earth/20"
-                    >
-                      <p className="font-futura text-lg text-crypto-coal leading-relaxed">
-                        {paper.authors}, {group.year},{" "}
-                        <em className="text-crypto-earth">
-                          {paper.title}
-                        </em>
-                        .{" "}
-                        <strong className="font-bold text-crypto-earth">
-                          {paper.journal}
-                        </strong>{" "}
-                        {paper.details}{" "}
-
-                        {paper.doi && (
-                          <a
-                            href={paper.doi}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 underline hover:text-blue-800 transition"
-                          >
-                            doi
-                          </a>
-                        )}
-
-                        <br />
-                        <br />
-
-                        <a
-                          href={paper.linkto}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-crypto-gold underline hover:text-crypto-ochre transition"
-                        >
-                          Read →
-                        </a>
-                      </p>
-                    </article>
-                  ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {visibleStories.map((story, index) => (
+              <article
+                key={`${story.title}-${index}`}
+                className="bg-crypto-sand rounded-lg p-4 shadow-md h-[520px] flex flex-col"
+              >
+                <div className="relative w-full h-[180px] mb-4 rounded-md overflow-hidden flex-shrink-0">
+                  <Image
+                    src={story.image}
+                    alt={story.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
-              </section>
+
+                <p className="text-crypto-ochre font-bold uppercase text-xs mb-2">
+                  {story.date}
+                </p>
+
+                <h3 className="font-gothic font-bold text-xl text-crypto-coal mb-3">
+                  {story.title}
+                </h3>
+
+                <p className="text-gray-700 mb-3">{story.text}</p>
+
+                <a
+                  href={story.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-crypto-ochre font-bold hover:text-crypto-earth transition mt-auto"
+                >
+                  Read more →
+                </a>
+              </article>
             ))}
           </div>
         </div>
-      </main>
+      </section>
+
+      <div className="w-full bg-crypto-sand py-20 px-8 md:px-16 lg:px-32">
+        <h2 className="font-gothic text-4xl md:text-5xl font-bold mb-6">
+          Lab News & Updates
+        </h2>
+
+        <ul className="space-y-6">
+          {[
+            {
+              text: "Congratulations to our PI on being promoted to Associate Professor!",
+              link: "#",
+            },
+            {
+              text: "Upcoming: Manuscript on lesion hypoxia under review.",
+              link: "#",
+            },
+            {
+              text: "New imaging pipeline released.",
+              link: "#",
+            },
+          ].map((item, index) => (
+            <li
+              key={index}
+              className="group relative border-l-4 border-crypto-red pl-4 pr-8 hover:border-crypto-ochre cursor-pointer"
+            >
+              <a href={item.link}>
+                <p className="text-2xl group-hover:text-crypto-ochre">
+                  {item.text}
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }
