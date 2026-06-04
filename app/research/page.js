@@ -17,7 +17,7 @@ export default function Research() {
   const researchAreas = [
     {
       title: "Antifungal Neuroimmunity",
-      image: "/images/engulfedcrypto.png",
+      image: "/images/engulfedcrypto.webp",
       caption: "Microglia paradoxically harbouring cryptococcal cells",
       description: "The brain possesses a highly specialised immune system that must balance protection against infection with preservation of neural function. While immune responses are essential for controlling fungal pathogens, they can also contribute to inflammation, tissue damage, and neurological dysfunction.",
       description2: "Our research seeks to understand how the brain's resident and infiltrating immune cells recognise and respond to fungal infection. By uncovering the mechanisms that govern protective immunity, immune evasion, and neuroinflammatory injury, we aim to identify new therapeutic strategies that improve pathogen clearance while minimising damage to the nervous system.",  
@@ -26,7 +26,7 @@ export default function Research() {
     {
       title: "Neurofluid Dynamics",
       /*video: "/videos/neurofluid-dynamics.mp4",*/
-      image: "/images/lamstain.png",
+      image: "/images/lamstain.webp",
       caption: "Cryptococcal cells aggregating in the perivascular space",
       description: "The brain relies on tightly regulated fluid transport systems to maintain homeostasis, remove waste products, and support normal neurological function. Disruption of these pathways can contribute to raised intracranial pressure, hydrocephalus, and neurological deterioration.",
       description2: "Our work investigates how fungal infections alter cerebrospinal fluid circulation, perivascular fluid flow, and brain drainage pathways. Using advanced imaging approaches and experimental models, we seek to uncover the mechanisms underlying fluid dysregulation and identify new opportunities for therapeutic intervention.",
@@ -34,7 +34,7 @@ export default function Research() {
 
     {
       title: "Neurometabolism",
-      image: "/images/hypoxia.jpg",
+      image: "/images/hypoxia.webp",
       caption: "Quan H and Zhang R (2023)",
       description: "The healthy brain is one of the most metabolically active organs in the body, requiring precise coordination of energy production and utilisation. Infection places enormous metabolic demands on both host cells and invading pathogens, fundamentally altering this balance.",
       description2: "Our research explores how fungal infections reshape metabolic pathways within the brain and how these changes influence immune responses, neuronal health, and disease progression. Understanding these interactions may reveal novel metabolic targets for improving outcomes in fungal neurological disease.",
@@ -42,7 +42,7 @@ export default function Research() {
 
     {
       title: "Neural Circuits & Behaviour",
-      image: "/images/brian.png",
+      image: "/images/brian.webp",
       caption: "Cellular networks in regions like the hippocampus are vulnerable to damage",
       description: "Neurological infections can profoundly affect cognition, behaviour, and quality of life, yet the biological mechanisms linking infection to functional impairment remain poorly understood.",
       description2: "We investigate how fungal infections disrupt neuronal networks, alter brain function, and contribute to neurological and behavioural abnormalities. By connecting cellular and molecular changes to functional outcomes, we aim to better understand the origins of neurological disability and identify pathways that support recovery and resilience.",
@@ -50,7 +50,7 @@ export default function Research() {
 
     {
       title: "Clinical Translation and Biomarker Discovery",
-      image: "/images/clinical-translation.jpg",
+      image: "/images/clinical-translation.webp",
       caption: "Hard at work in the lab",
       description: "Despite advances in antifungal therapy, many patients continue to experience severe disease, neurological complications, and poor outcomes. A major challenge remains the lack of reliable tools to predict disease progression and guide clinical decision-making.",
       description2: "Our translational research integrates clinical studies with experimental discoveries to identify biomarkers of disease activity, brain injury, and treatment response. Through close collaboration with clinicians and patients, we seek to accelerate the development of diagnostic and prognostic tools that improve care for people affected by fungal infections of the nervous system.",
