@@ -73,7 +73,7 @@ export default function Footer() {
 
             <p className="font-futura">University of Cape Town</p>
             <p className="font-futura mb-2">Neuroscience Institute, South Africa</p>
-            <p className="font-futura">
+            {/*<p className="font-futura">
               Email:{" "}
               <a
                 href="mailto:info@cryptolab.org"
@@ -82,7 +82,7 @@ export default function Footer() {
                 cryptolab@uct.ac.za
                 <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-crypto-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
-            </p>
+            </p>*/}
 
             {/* SOCIAL ICONS */}
             <div className="flex space-x-6 mt-6 text-crypto-gold text-2xl">
