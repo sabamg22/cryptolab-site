@@ -70,10 +70,11 @@ export default function News() {
         </div>
 
         <div className="relative">
+          {/* DESKTOP ARROWS (Hidden on mobile) */}
           <button
             onClick={prevSlide}
             aria-label="Previous story"
-            className="absolute left-[-60px] md:left-[-80px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-crypto-sand shadow-xl hover:bg-crypto-ochre hover:text-white transition-all duration-300 hover:scale-110"
+            className="hidden md:flex absolute left-[-80px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center rounded-full bg-crypto-sand text-crypto-coal shadow-xl hover:bg-crypto-ochre hover:text-white transition-all duration-300 hover:scale-110"
           >
             <FaArrowLeft />
           </button>
@@ -81,16 +82,20 @@ export default function News() {
           <button
             onClick={nextSlide}
             aria-label="Next story"
-            className="absolute right-[-60px] md:right-[-80px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-crypto-sand shadow-xl hover:bg-crypto-ochre hover:text-white transition-all duration-300 hover:scale-110"
+            className="hidden md:flex absolute right-[-80px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center rounded-full bg-crypto-sand text-crypto-coal shadow-xl hover:bg-crypto-ochre hover:text-white transition-all duration-300 hover:scale-110"
           >
             <FaArrowRight />
           </button>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-stretch">
             {visibleStories.map((story, index) => (
               <article
                 key={`${story.title}-${index}`}
-                className="bg-crypto-sand rounded-lg p-4 shadow-md h-[520px] flex flex-col"
+                // Changed from fixed height to h-full to prevent overflow
+                className={`bg-crypto-sand rounded-lg p-4 shadow-md flex-col h-full ${
+                  index > 0 ? "hidden md:flex" : "flex"
+                }`}
               >
                 <div className="relative w-full h-[180px] mb-4 rounded-md overflow-hidden flex-shrink-0">
                   <Image
@@ -106,22 +111,44 @@ export default function News() {
                   {story.date}
                 </p>
 
-                <h3 className="font-gothic font-bold text-xl text-crypto-coal mb-3">
+                <h3 className="font-gothic font-bold text-lg md:text-xl text-crypto-coal mb-3 line-clamp-2 md:line-clamp-none">
                   {story.title}
                 </h3>
 
-                <p className="text-gray-700 mb-3">{story.text}</p>
+                <p className="text-gray-700 text-sm md:text-base mb-4 line-clamp-3 md:line-clamp-none">
+                  {story.text}
+                </p>
 
+                {/* mt-auto ensures the link is always pushed to the very bottom of the card */}
                 <a
                   href={story.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline text-crypto-ochre font-bold hover:text-crypto-earth transition mt-auto"
+                  className="underline text-crypto-ochre font-bold hover:text-crypto-earth transition mt-auto inline-block"
                 >
                   Read more →
                 </a>
               </article>
             ))}
+          </div>
+
+          {/* MOBILE ARROWS (Hidden on desktop) */}
+          <div className="flex md:hidden justify-center items-center gap-6 mt-8">
+            <button
+              onClick={prevSlide}
+              aria-label="Previous story"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-crypto-sand text-crypto-coal shadow-md hover:bg-crypto-ochre hover:text-white transition-all duration-300 active:scale-95"
+            >
+              <FaArrowLeft />
+            </button>
+
+            <button
+              onClick={nextSlide}
+              aria-label="Next story"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-crypto-sand text-crypto-coal shadow-md hover:bg-crypto-ochre hover:text-white transition-all duration-300 active:scale-95"
+            >
+              <FaArrowRight />
+            </button>
           </div>
         </div>
       </section>
@@ -143,7 +170,7 @@ export default function News() {
               className="group relative border-l-4 border-crypto-red pl-4 pr-8 hover:border-crypto-ochre cursor-pointer"
             >
               <a href={item.link}>
-                <p className="text-2xl group-hover:text-crypto-ochre">
+                <p className="text-2xl group-hover:text-crypto-ochre transition-colors">
                   {item.text}
                 </p>
               </a>
