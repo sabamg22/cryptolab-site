@@ -50,7 +50,7 @@ export default function Research() {
 
     {
       title: "Clinical Translation and Biomarker Discovery",
-      image: "/images/clinical-translation.webp",
+      image: "/images/study-image4.jpg",
       caption: "Hard at work in the lab",
       description: "Despite advances in antifungal therapy, many patients continue to experience severe disease, neurological complications, and poor outcomes. A major challenge remains the lack of reliable tools to predict disease progression and guide clinical decision-making.",
       description2: "Our translational research integrates clinical studies with experimental discoveries to identify biomarkers of disease activity, brain injury, and treatment response. Through close collaboration with clinicians and patients, we seek to accelerate the development of diagnostic and prognostic tools that improve care for people affected by fungal infections of the nervous system.",

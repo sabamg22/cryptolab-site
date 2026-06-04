@@ -103,7 +103,7 @@ export default function Footer() {
       {/* DIVIDER */}
       <div className="border-t border-white/20 mt-12 pt-6 text-center text-sm">
         <p className="font-futura">
-          © {new Date().getFullYear()} The Crypto Lab — All Rights Reserved
+          © {new Date().getFullYear()} The CryptoLab — All Rights Reserved
         </p>
         Website by {" "}
 
