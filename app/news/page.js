@@ -134,7 +134,7 @@ export default function News() {
         <ul className="space-y-6">
           {[
             {
-              text: "Congratulations to our PI on being promoted to Associate Professor!",
+              text: "Keep an eye out for our upcoming updates!",
               link: "#",
             },
           ].map((item, index) => (

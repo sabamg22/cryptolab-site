@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import Hero from "../../components/hero";
-import { FaEnvelope, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaCopy, FaLinkedin } from "react-icons/fa";
 import { SiOrcid, SiGooglescholar } from "react-icons/si";
+import { useState } from "react";
 
 function formatBio(text) {
   const parts = text.split(/(\*[^*]+\*)/g);
@@ -18,6 +18,14 @@ function formatBio(text) {
 }
 
 export default function Team() {
+  const [copied, setCopied] = useState(null);
+
+  const handleCopy = (email) => {
+    navigator.clipboard.writeText(email);
+    setCopied(email);
+    setTimeout(() => setCopied(null), 1200);
+  };
+
   const team = [
     {
       name: "A/Prof Rachael Dangarembizi",
@@ -117,6 +125,16 @@ export default function Team() {
 
       <section className="w-full bg-crypto-earth px-8 md:px-16 lg:px-32 py-20 space-y-12">
         {team.map((member, idx) => {
+          // Check for studentNumber first, fallback to regex format if none exists
+          const email = member.studentNumber
+            ? `${member.studentNumber.toLowerCase()}@myuct.ac.za`
+            : member.name
+                .toLowerCase()
+                .replace(/(a\/prof|prof|dr)\s+/gi, "")
+                .replace(/[^a-z\s]/g, "")
+                .trim()
+                .replace(/\s+/g, ".") + "@uct.ac.za";
+
           return (
             <div
               key={idx}
@@ -145,16 +163,31 @@ export default function Team() {
                     {formatBio(member.bio)}
                   </p>
 
-                  {/* Combined Icon Row */}
-                  <div className="flex items-center gap-4 mt-4">
-                    <Link
-                      href="/contact"
-                      className="text-crypto-ochre hover:text-crypto-gold opacity-80 hover:opacity-100 transition-all"
-                      aria-label={`Contact ${member.name}`}
+                  <div className="flex items-center gap-3">
+                    <a
+                      href={`mailto:${email}`}
+                      className="email-underline text-crypto-gold hover:text-white text-sm font-mono flex items-center gap-2 transition-colors"
                     >
-                      <FaEnvelope size={20} />
-                    </Link>
+                      <FaEnvelope className="text-white" /> {email}
+                    </a>
 
+                    <div className="relative">
+                      <button
+                        onClick={() => handleCopy(email)}
+                        className="text-crypto-ochre hover:text-crypto-gold opacity-60 hover:opacity-100 transition-all"
+                      >
+                        <FaCopy />
+                      </button>
+
+                      {copied === email && (
+                        <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-xs text-crypto-gold animate-fadeInOut whitespace-nowrap">
+                          Copied!
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4 mt-4">
                     {member.linkedin && (
                       <a
                         href={member.linkedin}

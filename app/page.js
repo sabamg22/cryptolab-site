@@ -20,7 +20,7 @@ export default function Home() {
           {/* IMAGE */}
           <div className="relative w-full h-80 md:h-[420px]">
             <Image
-              src="/images/brain.webp"
+              src="/images/study-image.webp"
               alt="Brain illustration"
               fill
               className="object-contain"
@@ -30,26 +30,18 @@ export default function Home() {
           {/* TEXT */}
           <div>
             <p className="font-futura text-crypto-earth tracking-widest uppercase text-sm mb-4">
-              What We Study
+              WHO WE ARE
             </p>
 
             <h2 className="font-gothic text-4xl md:text-5xl font-bold text-crypto-earth leading-tight mb-6">
-              We study how fungal infections disrupt the brain
+              Africa's pioneering laboratory for fungal neuroinfections research
             </h2>
 
-            <p className="font-futura text-gray-700 text-lg leading-relaxed mb-6">
-              Simply put, we investigate how pathogens interact with the brain’s immune and fluid systems
-              to drive injury and disease. Using advanced bioimaging and experimental models, we track
-              how fungi invade the central nervous system, move through brain tissue, and evade host
-              defences.
-            </p>
-
-            <p className="font-futura text-gray-700 text-lg leading-relaxed mb-8">
-              Our goal is to uncover the cellular and molecular mechanisms that link infection to brain
-              dysfunction. By visualising these processes in intact systems, we aim to identify new
-              pathways of injury and recovery, ultimately informing better diagnostics, treatments, and
-              outcomes for devastating diseases such as cryptococcal meningitis.
-            </p>
+            <p className="font-futura text-lg leading-relaxed mb-8 text-gray-700 whitespace-pre-line">
+              Our work is focussed on understanding how fungal infections damage the brain. We specifically study the biological mechanisms that drive neurological injury during infections such as cryptococcal meningitis, one of the leading causes of infectious brain disease and death in Africa.
+              <p className="h-6"></p>
+              <a href="/team" className="font-gothic email-underline text-crypto-ochre font-bold hover:text-crypto-coal transition-colors">Our team</a> brings together expertise in neuroscience, immunology, microbiology, imaging, and computational biology to uncover how pathogens interact with the brain and to identify new opportunities for diagnosis, treatment, and recovery.
+              </p>
 
             {/*<Link href="/research">
               <button className="bg-crypto-earth text-white px-8 py-3 rounded-md hover:bg-crypto-earth/80 transition">
@@ -65,20 +57,23 @@ export default function Home() {
       <section className="w-full bg-crypto-earth py-12 px-8 md:px-16 lg:px-32 text-white">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-          {/* TEXT */}
+          {/* TEXT COLUMN */}
           <div>
-            <p className="font-futura text-white tracking-widest uppercase text-sm mb-4">
+            <div className="font-futura text-white tracking-widest uppercase text-sm mb-4">
               Why This Research Matters
-            </p>
+            </div>
 
             <h2 className="font-gothic text-4xl md:text-5xl font-bold leading-tight mb-6">
               Why our research matters
             </h2>
 
-            <p className="font-futura text-lg leading-relaxed mb-8 text-gray-100">
-              Cryptococcal meningitis remains one of the leading causes of death in people
-              living with HIV, especially in Sub-Saharan Africa.
-            </p>
+            <div className="font-futura text-lg leading-relaxed mb-8 text-gray-100 whitespace-pre-line">
+              Fungal infections of the brain are among the most devastating infectious diseases worldwide. They are often difficult to diagnose, challenging to treat, and frequently fatal if left untreated. Among these, cryptococcal meningitis is the leading cause of fungal meningitis globally, responsible for about 200 000 deaths each year, with the greatest burden borne by African populations.
+              <p className="h-6"></p>
+              Despite its devastating impact, the biological mechanisms that drive neurological damage, disability, and death unclear and this limits our ability to develop more effective diagnostics, therapies, and strategies to improve patient outcomes.
+              <p className="h-6"></p>
+              At CryptoLab, we believe that understanding how fungal infections disrupt brain function is essential to transforming the way these diseases are diagnosed, treated, and prevented. By uncovering the mechanisms of brain injury, we aim to advance new solutions that improve survival, reduce disability, and ultimately lessen the global burden of fungal neurological disease.
+            </div>
 
             <Link href="/research/">
               <button className="bg-white text-crypto-earth px-8 py-3 rounded-md hover:bg-crypto-gold hover:text-crypto-sand transition">
@@ -87,14 +82,32 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* IMAGE */}
-          <div className="relative w-full h-80 md:h-[420px]">
-            <Image
-              src="/images/africa-canva.webp"
-              alt="Africa incidence map"
-              fill
-              className="object-contain"
-            />
+          {/* IMAGE & STATS COLUMN */}
+          <div className="flex flex-col justify-center">
+            
+            {/* IMAGE */}
+            <div className="relative w-full h-80 md:h-[420px]">
+              <Image
+                src="/images/red-africa-on-sand.webp"
+                alt="Africa incidence map"
+                fill
+                className="object-contain"
+              />
+            </div>
+
+            {/* STATS UNDER IMAGE 
+            <div className="max-w-md mx-auto w-full">
+              <p className="font-futura text-white tracking-widest uppercase text-sm mb-4">
+                STATS
+              </p>
+              <ul className="list-disc pl-6 space-y-2 font-futura text-gray-100 text-base">
+                <li>Opportunistic fungal infection of the brain</li>
+                <li>75% of global cases and deaths due to CM are in SSA</li>
+                <li>SSA loses on average 200 000 people to CM annually</li>
+                <li>Unacceptably high mortality rates (40-70%) with treatment</li>
+              </ul>
+            </div>*/}
+
           </div>
 
         </div>

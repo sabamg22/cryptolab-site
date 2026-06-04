@@ -200,7 +200,7 @@ export default function NavBar() {
       {/* MOBILE NAV */}
       <div
         ref={menuRef}
-        className={`md:hidden bg-crypto-earth text-white font-futura flex flex-col gap-4 px-6 py-1 transition-all overflow-hidden ${
+        className={`md:hidden bg-crypto-earth text-white font-futura flex flex-col gap-4 px-6 py-4 transition-all overflow-hidden ${
           openMenu ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >

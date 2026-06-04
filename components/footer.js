@@ -79,7 +79,7 @@ export default function Footer() {
                 href="mailto:info@cryptolab.org"
                 className="relative inline-block text-crypto-gold hover:text-white transition group"
               >
-                info@cryptolab.org
+                cryptolab@uct.ac.za
                 <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-crypto-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
             </p>

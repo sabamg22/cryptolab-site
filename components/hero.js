@@ -1,4 +1,10 @@
-export default function Hero({ image, title, subtitle, children, earlyShrink = false }) {
+export default function Hero({
+  image,
+  title,
+  subtitle,
+  children,
+  earlyShrink = false,
+}) {
   // If children exist → left-aligned layout
   const alignment = children
     ? "items-start text-left px-6 md:px-16 lg:px-32"
@@ -11,20 +17,37 @@ export default function Hero({ image, title, subtitle, children, earlyShrink = f
     <section
       id="hero"
       className={`
-        relative w-full h-[85vh] md:h-[85vh]
-        overflow-hidden bg-cover bg-center bg-no-repeat
+        relative 
+        w-full 
+        h-[55vh] 
+        md:h-[85vh]
+        overflow-hidden
+        bg-cover
+        bg-[center_25%]
+        md:bg-center
+        bg-no-repeat
+        bg-scroll
+        md:bg-fixed
         ${heroClass}
       `}
       style={{
         backgroundImage: `url(${image})`,
-        backgroundAttachment: "fixed",
       }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* TEXT BLOCK */}
-      <div className={`absolute inset-0 flex flex-col justify-center ${alignment}`}>
+      <div
+        className={`
+          absolute 
+          inset-0 
+          flex 
+          flex-col 
+          justify-center 
+          ${alignment}
+        `}
+      >
         {children ? (
           <div className="flex flex-col items-start max-w-3xl">
             {children}
@@ -33,13 +56,13 @@ export default function Hero({ image, title, subtitle, children, earlyShrink = f
           <>
             <h1
               className="
-                font-gothic 
-                text-white 
-                font-bold 
-                text-5xl 
-                md:text-7xl 
-                lg:text-8xl 
-                drop-shadow-lg 
+                font-gothic
+                text-white
+                font-bold
+                text-5xl
+                md:text-7xl
+                lg:text-8xl
+                drop-shadow-lg
                 leading-tight
               "
             >
@@ -49,13 +72,13 @@ export default function Hero({ image, title, subtitle, children, earlyShrink = f
             {subtitle && (
               <p
                 className="
-                  font-courier 
-                  text-white 
-                  text-xl 
-                  md:text-2xl 
-                  lg:text-3xl 
-                  mt-4 
-                  drop-shadow-md 
+                  font-courier
+                  text-white
+                  text-xl
+                  md:text-2xl
+                  lg:text-3xl
+                  mt-4
+                  drop-shadow-md
                   font-medium
                 "
               >
