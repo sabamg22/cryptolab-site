@@ -71,7 +71,7 @@ export default function News() {
         {/* Open Graph Tags for Image Previews */}
         <meta property="og:title" content="The inclusion paradox: Why the representation of women in academia is not enough" />
         <meta property="og:description" content="If universities want to retain talented women, we need to rethink what we mean by productivity, career progression and academic excellence across different stages of a person's life..." />
-        <meta property="og:image" content="https://yourdomain.com/images/featured-news.png" />
+        <meta property="og:image" content="https://crypto-lab.co.za/images/featured-news.png" />
         <meta property="og:url" content="https://mg.co.za/thought-leader/2026-08-26-the-inclusion-paradox-why-the-representation-of-women-in-academia-is-not-enough/" />
         <meta property="og:type" content="article" />
 
@@ -79,7 +79,7 @@ export default function News() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="The inclusion paradox: Why the representation of women in academia is not enough" />
         <meta name="twitter:description" content="If universities want to retain talented women, we need to rethink what we mean by productivity, career progression and academic excellence across different stages of a person's life..." />
-        <meta name="twitter:image" content="https://yourdomain.com/images/featured-news.png" />
+        <meta name="twitter:image" content="https://crypto-lab.co.za/images/featured-news.png" />
       </Head>
 
       <Hero
