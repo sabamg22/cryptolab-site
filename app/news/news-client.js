@@ -1,0 +1,207 @@
+"use client";
+
+import Head from "next/head";
+import Hero from "../../components/hero";
+import Image from "next/image";
+import { useState } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
+export default function News() {
+  const [startIndex, setStartIndex] = useState(0);
+
+  const stories = [
+    {
+      image: "/images/story5.webp",
+      date: "26 August 2026",
+      title: "The inclusion paradox: Why the representation of women in academia is not enough",
+      text: "If universities want to retain talented women, we need to rethink what we mean by productivity, career progression and academic excellence across different stages of a person's life...",
+      link: "https://mg.co.za/thought-leader/2026-08-26-the-inclusion-paradox-why-the-representation-of-women-in-academia-is-not-enough/",
+    },
+    {
+      image: "/images/story3.webp",
+      date: "14 April 2026",
+      title: "UCT researchers join multi-million-pound fungal fight",
+      text: "Researchers at the University of Cape Town are playing a leading role in a significant international collaboration to fast-track the understanding of fungal diseases that claim about 2.5 million lives each year. The funding of £4.5 million (approximately R100 million)...",
+      link: "https://www.news.uct.ac.za/article/-2026-04-14-uct-researchers-join-multi-million-pound-fungal-fight",
+    },
+    {
+      image: "/images/story4.webp",
+      date: "10 April 2026",
+      title:
+        "Cape Town researchers lead R100 million initiative to fight deadly fungal infections",
+      text: "Researchers at the University of Cape Town are part of a major international effort backed by about R100 million to combat fungal infections that kill an estimated 2.5 million people worldwide each year...",
+      link: "https://iol.co.za/capeargus/news/2026-04-10-cape-town-researchers-lead-r100-million-initiative-to-fight-deadly-fungal-infections/",
+    },
+    {
+      image: "/images/story2.webp",
+      date: "22 September 2025",
+      title:
+        "For advancing neuroinfectious disease research, and her groundbreaking work on cryptococcal meningitis",
+      text: "A deadly fungal infection is claiming more lives in sub-Saharan Africa than tuberculosis among people living with HIV, yet few outside the continent even know its name...",
+      link: "https://nstf.org.za/2025/09/22/dr-rachael-dangarembizi/",
+    },
+    {
+      image: "/images/story1.webp",
+      date: "14 July 2023",
+      title:
+        "Fungal infections in the brain aren’t just the stuff of movies – Africa grapples with a deadly epidemic",
+      text: "In the 2023 American post-apocalyptic drama television series The Last of Us, humans are plunged towards extinction as a fungal infection of the brain zombie-fies most of the species...",
+      link: "https://www.gavi.org/vaccineswork/fungal-infections-brain-arent-just-stuff-movies-africa-grapples-deadly-epidemic",
+    },
+  ];
+
+  const visibleStories = [0, 1, 2].map(
+    (offset) => stories[(startIndex + offset) % stories.length]
+  );
+
+  const nextSlide = () => {
+    setStartIndex((prev) => (prev + 1) % stories.length);
+  };
+
+  const prevSlide = () => {
+    setStartIndex((prev) => (prev - 1 + stories.length) % stories.length);
+  };
+
+  return (
+    <>
+      <Head>
+        <title>The inclusion paradox: Why the representation of women in academia is not enough | Lab News</title>
+        <meta name="description" content="If universities want to retain talented women, we need to rethink what we mean by productivity, career progression and academic excellence across different stages of a person's life..." />
+        
+        {/* Open Graph Tags for Image Previews */}
+        <meta property="og:title" content="The inclusion paradox: Why the representation of women in academia is not enough" />
+        <meta property="og:description" content="If universities want to retain talented women, we need to rethink what we mean by productivity, career progression and academic excellence across different stages of a person's life..." />
+        <meta property="og:image" content="https://crypto-lab.co.za/images/featured-news.png" />
+        <meta property="og:url" content="https://mg.co.za/thought-leader/2026-08-26-the-inclusion-paradox-why-the-representation-of-women-in-academia-is-not-enough/" />
+        <meta property="og:type" content="article" />
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="The inclusion paradox: Why the representation of women in academia is not enough" />
+        <meta name="twitter:description" content="If universities want to retain talented women, we need to rethink what we mean by productivity, career progression and academic excellence across different stages of a person's life..." />
+        <meta name="twitter:image" content="https://crypto-lab.co.za/images/featured-news.png" />
+      </Head>
+
+      <Hero
+        image="/images/hero-news.webp"
+        title="Lab News"
+        subtitle="Updates, publications, and achievements"
+      />
+
+      <section className="w-full bg-crypto-desert py-20 px-8 md:px-16 lg:px-32">
+        <div className="mb-10">
+          <h2 className="font-gothic text-crypto-earth text-4xl md:text-5xl font-bold">
+            Featured Stories
+          </h2>
+        </div>
+
+        <div className="relative">
+          {/* DESKTOP ARROWS (Hidden on mobile) */}
+          <button
+            onClick={prevSlide}
+            aria-label="Previous story"
+            className="hidden md:flex absolute left-[-80px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center rounded-full bg-crypto-sand text-crypto-coal shadow-xl hover:bg-crypto-ochre hover:text-white transition-all duration-300 hover:scale-110"
+          >
+            <FaArrowLeft />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            aria-label="Next story"
+            className="hidden md:flex absolute right-[-80px] top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center rounded-full bg-crypto-sand text-crypto-coal shadow-xl hover:bg-crypto-ochre hover:text-white transition-all duration-300 hover:scale-110"
+          >
+            <FaArrowRight />
+          </button>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-stretch">
+            {visibleStories.map((story, index) => (
+              <article
+                key={`${story.title}-${index}`}
+                className={`bg-crypto-sand rounded-lg p-4 shadow-md flex-col h-full ${
+                  index > 0 ? "hidden md:flex" : "flex"
+                }`}
+              >
+                <div className="relative w-full h-[180px] mb-4 rounded-md overflow-hidden flex-shrink-0">
+                  <Image
+                    src={story.image}
+                    alt={story.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                <p className="text-crypto-ochre font-bold uppercase text-xs mb-2">
+                  {story.date}
+                </p>
+
+                <h3 className="font-gothic font-bold text-lg md:text-xl text-crypto-coal mb-3 line-clamp-2 md:line-clamp-none">
+                  {story.title}
+                </h3>
+
+                <p className="text-gray-700 text-sm md:text-base mb-4 line-clamp-3 md:line-clamp-none">
+                  {story.text}
+                </p>
+
+                <a
+                  href={story.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-crypto-ochre font-bold hover:text-crypto-earth transition mt-auto inline-block"
+                >
+                  Read more →
+                </a>
+              </article>
+            ))}
+          </div>
+
+          {/* MOBILE ARROWS (Hidden on desktop) */}
+          <div className="flex md:hidden justify-center items-center gap-6 mt-8">
+            <button
+              onClick={prevSlide}
+              aria-label="Previous story"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-crypto-sand text-crypto-coal shadow-md hover:bg-crypto-ochre hover:text-white transition-all duration-300 active:scale-95"
+            >
+              <FaArrowLeft />
+            </button>
+
+            <button
+              onClick={nextSlide}
+              aria-label="Next story"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-crypto-sand text-crypto-coal shadow-md hover:bg-crypto-ochre hover:text-white transition-all duration-300 active:scale-95"
+            >
+              <FaArrowRight />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div className="w-full bg-crypto-sand py-20 px-8 md:px-16 lg:px-32">
+        <h2 className="font-gothic text-4xl md:text-5xl font-bold mb-6">
+          Lab News & Updates
+        </h2>
+
+        <ul className="space-y-6">
+          {[
+            {
+              text: "Keep an eye out for our upcoming updates!",
+              link: "#",
+            },
+          ].map((item, index) => (
+            <li
+              key={index}
+              className="group relative border-l-4 border-crypto-red pl-4 pr-8 hover:border-crypto-ochre cursor-pointer"
+            >
+              <a href={item.link}>
+                <p className="text-2xl group-hover:text-crypto-ochre transition-colors">
+                  {item.text}
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+}
