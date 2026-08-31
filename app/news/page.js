@@ -10,6 +10,13 @@ export default function News() {
 
   const stories = [
     {
+      image: "/images/story5.webp",
+      date: "26 August 2026",
+      title: "The inclusion paradox: Why the representation of women in academia is not enough",
+      text: "If universities want to retain talented women, we need to rethink what we mean by productivity, career progression and academic excellence across different stages of a person's life...",
+      link: "https://mg.co.za/thought-leader/2026-08-26-the-inclusion-paradox-why-the-representation-of-women-in-academia-is-not-enough/",
+    },
+    {
       image: "/images/story3.webp",
       date: "14 April 2026",
       title: "UCT researchers join multi-million-pound fungal fight",
