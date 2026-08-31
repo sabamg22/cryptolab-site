@@ -6,11 +6,11 @@ export const metadata = {
   openGraph: {
     title: "The inclusion paradox: Why the representation of women in academia is not enough",
     description: "If universities want to retain talented women, we need to rethink what we mean by productivity, career progression and academic excellence across different stages of a person's life...",
-    url: "https://mg.co.za/thought-leader/2026-08-26-the-inclusion-paradox-why-the-representation-of-women-in-academia-is-not-enough/",
+    url: "https://www.crypto-lab.co.za/news/",
     siteName: "Lab News",
     images: [
       {
-        url: "/images/featured-news.png",
+        url: "https://www.crypto-lab.co.za/images/featured-news.png",
         width: 1200,
         height: 630,
         alt: "The inclusion paradox: Why the representation of women in academia is not enough",
@@ -20,10 +20,11 @@ export const metadata = {
     type: "article",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary_large_image", // This forces the large image card on X
+    site: "@your_lab_handle", // Optional: Add your lab's Twitter handle if you have one
     title: "The inclusion paradox: Why the representation of women in academia is not enough",
     description: "If universities want to retain talented women, we need to rethink what we mean by productivity, career progression and academic excellence across different stages of a person's life...",
-    images: ["/images/featured-news.png"],
+    images: ["https://www.crypto-lab.co.za/images/featured-news.png"],
   },
 };
 
