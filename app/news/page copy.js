@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import Hero from "../../components/hero";
 import Image from "next/image";
 import { useState } from "react";
@@ -64,24 +63,6 @@ export default function News() {
 
   return (
     <>
-      <Head>
-        <title>The inclusion paradox: Why the representation of women in academia is not enough | Lab News</title>
-        <meta name="description" content="If universities want to retain talented women, we need to rethink what we mean by productivity, career progression and academic excellence across different stages of a person's life..." />
-        
-        {/* Open Graph Tags for Image Previews */}
-        <meta property="og:title" content="The inclusion paradox: Why the representation of women in academia is not enough" />
-        <meta property="og:description" content="If universities want to retain talented women, we need to rethink what we mean by productivity, career progression and academic excellence across different stages of a person's life..." />
-        <meta property="og:image" content="https://yourdomain.com/images/featured-news.png" />
-        <meta property="og:url" content="https://mg.co.za/thought-leader/2026-08-26-the-inclusion-paradox-why-the-representation-of-women-in-academia-is-not-enough/" />
-        <meta property="og:type" content="article" />
-
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="The inclusion paradox: Why the representation of women in academia is not enough" />
-        <meta name="twitter:description" content="If universities want to retain talented women, we need to rethink what we mean by productivity, career progression and academic excellence across different stages of a person's life..." />
-        <meta name="twitter:image" content="https://yourdomain.com/images/featured-news.png" />
-      </Head>
-
       <Hero
         image="/images/hero-news.webp"
         title="Lab News"
@@ -118,6 +99,7 @@ export default function News() {
             {visibleStories.map((story, index) => (
               <article
                 key={`${story.title}-${index}`}
+                // Changed from fixed height to h-full to prevent overflow
                 className={`bg-crypto-sand rounded-lg p-4 shadow-md flex-col h-full ${
                   index > 0 ? "hidden md:flex" : "flex"
                 }`}
@@ -144,6 +126,7 @@ export default function News() {
                   {story.text}
                 </p>
 
+                {/* mt-auto ensures the link is always pushed to the very bottom of the card */}
                 <a
                   href={story.link}
                   target="_blank"
